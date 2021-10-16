@@ -21,11 +21,10 @@
     <li>VisitorController</li>
 <ul>
 <h3>AdminController.java</h3>
+
 <pre>
     <code>
-            package com.boot.alberto.controllers;
-
-
+package com.boot.alberto.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +43,7 @@ public class AdminController {
 
 <pre>
     <code>
-            package com.boot.alberto.controllers;
+package com.boot.alberto.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,10 +54,48 @@ public class HomeController {
 	@GetMapping("index")
 	public  String index() {
 		return "index";
-	}
-	
-
+	}	
 }
+    </code>
+</pre>
+
+<h3>UserController.java</h3>
+
+<pre>
+    <code>
+package com.boot.alberto.controllers;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("user")
+public class UserController {
+	@GetMapping("index")
+    public String index(){
+        return "user/index";
+    }
+}
+    </code>
+</pre>
+
+<h3>VisitorController.java</h3>
+<pre>
+    <code>
+package com.boot.alberto.controllers;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("visitor")
+public class VisitorController {	
+	@GetMapping("index")
+    public String index(){
+        return "visitor/index";
+    }
+}
+
     </code>
 </pre>
 
