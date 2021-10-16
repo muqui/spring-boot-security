@@ -106,4 +106,17 @@ public class VisitorController {
 
 ![security_02](Pictures/security_02.png)
 
+<h3>/template/index.html</h3>
+
+![security_03](Pictures/security_03.png)
+<h3>/template/admin/index.html</h3>
+
+![security_03](Pictures/security_04.png)
+<h3>/template/user/index.html</h3>
+
+![security_03](Pictures/security_05.png)
+<h3>/template/visitor/index.html</h3>
+
+![security_03](Pictures/security_06.png)
+
 
