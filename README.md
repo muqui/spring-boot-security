@@ -20,7 +20,7 @@
     <li>UserController</li>
     <li>VisitorController</li>
 <ul>
-<p>AdminController.java</p>
+<h3>AdminController.java</h3>
 <pre>
     <code>
             package com.boot.alberto.controllers;
@@ -40,7 +40,7 @@ public class AdminController {
     </code>
 <pre>
 
-<p>HomeController.java</p>
+<h3>HomeController.java</h3>
 
 <pre>
     <code>
