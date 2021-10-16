@@ -19,8 +19,10 @@
     <li>HomeController</li>
     <li>UserController</li>
     <li>VisitorController</li>
-<ul>
+</ul>
 <h3>AdminController.java</h3>
+
+
 
 <pre>
     <code>
@@ -37,7 +39,7 @@ public class AdminController {
 	    }
 }
     </code>
-<pre>
+</pre>
 
 <h3>HomeController.java</h3>
 
@@ -80,6 +82,8 @@ public class UserController {
 </pre>
 
 <h3>VisitorController.java</h3>
+
+
 <pre>
     <code>
 package com.boot.alberto.controllers;
@@ -95,7 +99,11 @@ public class VisitorController {
         return "visitor/index";
     }
 }
-
     </code>
 </pre>
+
+<h2>create files html</h2>
+
+![security_02](Pictures/security_02.png)
+
 
