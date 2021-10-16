@@ -39,7 +39,9 @@ public class AdminController {
 }
     </code>
 <pre>
+
 <p>HomeController.java</p>
+
 <pre>
     <code>
             package com.boot.alberto.controllers;
@@ -59,50 +61,4 @@ public class HomeController {
 }
     </code>
 </pre>
-<p>UserController.java</p>
-<pre>
-    <code>
-            package com.boot.alberto.controllers;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-
-@Controller
-@RequestMapping("user")
-public class UserController {
-
-	
-	@GetMapping("index")
-    public String index(){
-        return "user/index";
-    }
-}
-    </code>
-</pre>
-<p>VisitorController.java</p>
-<pre>
-    <code>
-package com.boot.alberto.controllers;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping("visitor")
-public class VisitorController {
-	
-	@GetMapping("index")
-    public String index(){
-        return "visitor/index";
-    }
- 
-}
-
-    </code>
-</pre>
-
-
 
