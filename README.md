@@ -118,5 +118,69 @@ public class VisitorController {
 <h3>/template/visitor/index.html</h3>
 
 ![security_03](Pictures/security_06.png)
+<h3>/template/fragments.html</h3>
+
+![security_07](Pictures/security_07.png)
+
+<h2>http basic authentication using spring security</h2>
+<p>Create a package named "package com.boot.alberto.security"</p>
+
+<p>Create a java class named "WebSecurityConfigurerAdapter" </p>
+
+<pre>
+    <code>
+package com.boot.alberto.security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+	
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth
+				.inMemoryAuthentication()
+				.withUser("admin").password(passwordEncoder().encode("123456")).roles("ADMIN")
+				.and()
+				.withUser("user").password(passwordEncoder().encode("123456")).roles("USER")
+				.and()
+				.withUser("visitor").password(passwordEncoder().encode("123456")).roles("VISITOR");			
+				
+	}
+  @Override
+protected void configure(HttpSecurity http) throws Exception {
+	http
+			.authorizeRequests()
+			
+			.antMatchers("/index.html").permitAll()
+			.antMatchers("/visitor/**").authenticated()
+			.antMatchers("/admin/**").hasRole("ADMIN")
+			.antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+			.and()
+			.httpBasic();
+	
+	  
+}	
+  @Bean
+  PasswordEncoder passwordEncoder() {
+	  return new BCryptPasswordEncoder();
+	                                                                                                                                                     
+  }
+
+}
+
+    </code>
+</pre>
+
+
 
 
